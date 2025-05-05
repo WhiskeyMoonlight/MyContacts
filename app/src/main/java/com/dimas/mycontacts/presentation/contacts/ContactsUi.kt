@@ -5,7 +5,6 @@ import com.dimas.mycontacts.domain.model.ContactImage
 sealed interface ContactUiModel {
     data class ContactLetter(val letter: Char) : ContactUiModel
     data class ContactUiItem(
-        val id: Long,
         val name: String,
         val number: String,
         val avatar: ContactImage

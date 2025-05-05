@@ -11,7 +11,6 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 
 val contactsModule = module {
-//    singleOf(::AndroidContactsRepository).bind(ContactsRepository::class)
     single { AndroidContactsRepository(androidContext()) } bind ContactsRepository::class
 
     singleOf(::GetContactsUseCase)
