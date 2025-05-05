@@ -19,7 +19,7 @@ class AndroidContactsRepository(
             cr.query(
                 ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                 PROJECTION,
-                null,
+                SELECTION,
                 null,
                 SORT_ORDER
             )?.use { cursor ->
@@ -61,6 +61,12 @@ class AndroidContactsRepository(
             ContactsContract.Contacts.PHOTO_THUMBNAIL_URI,
             ContactsContract.CommonDataKinds.Phone.NUMBER
         )
+
+        private val SELECTION = """
+             ${ContactsContract.CommonDataKinds.Phone.TYPE} = ${ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE}
+             AND ${ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME} IS NOT NULL
+             AND ${ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME} != ''
+            """.trimIndent()
 
         private const val SORT_ORDER = "${ContactsContract.Contacts.DISPLAY_NAME} ASC"
     }
