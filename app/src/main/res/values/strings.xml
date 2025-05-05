@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyContacts</string>
+    <string name="hello_message">Hello from "Contacts" app!</string>
+    <string name="empty_contacts_list_message">You currently have no contacts! Try adding them and come back later!</string>
+    <string name="avatar_cd">Contact\'s avatar</string>
+    <string name="permission_message">Contacts permissions required!</string>
+    <string name="permission_contacts_unavailable">Contacts unavailable</string>
+    <string name="permission_request">Request permissions</string>
+</resources>
